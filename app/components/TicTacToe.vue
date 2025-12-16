@@ -1,7 +1,7 @@
 <template>
     <div class="h-screen flex items-center justify-center bg-[#14120B] text-[#F2F2F2]">
       <div class="flex flex-col items-center gap-12 py-8 px-4 w-full max-w-md md:max-w-lg">
-        <h1 class="text-2xl font-black bg-gradient-to-r from-[#F2F2F2] via-[#A8A8A8] to-[#F2F2F2] bg-clip-text text-transparent drop-shadow-2xl">
+        <h1 class="text-2xl text-center font-black bg-gradient-to-r from-[#F2F2F2] via-[#A8A8A8] to-[#F2F2F2] bg-clip-text text-transparent drop-shadow-2xl">
           Крестики-Нолики
         </h1>
         
