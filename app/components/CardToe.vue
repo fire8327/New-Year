@@ -32,19 +32,24 @@
           </div>
         </div>
         
-        <button
-          @click="reset"
-          class="px-6 py-2 bg-[#F2F2F2]/10 text-[#F2F2F2] font-bold text-lg rounded-2xl hover:bg-[#F2F2F2]/20 active:bg-[#F2F2F2]/5 transition-all duration-300 shadow-lg shadow-black/50 hover:shadow-xl hover:shadow-black/70 border border-[#333]/50 focus:outline-none focus:ring-2 focus:ring-[#A8A8A8]/50"
-        >
-          {{ gameOver ? 'Играть снова' : 'Новая игра' }}
-        </button>
+        <div class="flex items-center gap-2">
+            <button
+              @click="reset"
+              class="px-6 py-2 bg-[#F2F2F2]/10 text-[#F2F2F2] font-bold text-lg rounded-2xl hover:bg-[#F2F2F2]/20 active:bg-[#F2F2F2]/5 transition-all duration-300 shadow-lg shadow-black/50 hover:shadow-xl hover:shadow-black/70 border border-[#333]/50 focus:outline-none focus:ring-2 focus:ring-[#A8A8A8]/50"
+            >
+              {{ gameOver ? 'Играть снова' : 'Новая игра' }}
+            </button>
+            <button @click="passwordStore.password = ''"
+              class="px-6 py-2 bg-[#F2F2F2]/10 text-[#F2F2F2] font-bold text-lg rounded-2xl hover:bg-[#F2F2F2]/20 active:bg-[#F2F2F2]/5 transition-all duration-300 shadow-lg shadow-black/50 hover:shadow-xl hover:shadow-black/70 border border-[#333]/50 focus:outline-none focus:ring-2 focus:ring-[#A8A8A8]/50"
+            >
+              В меню
+            </button>
+        </div>
       </div>
     </div>
   </template>
   
-  <script setup lang="ts">
-  import { ref, computed, onMounted } from 'vue'
-  
+  <script setup lang="ts">  
   interface Card {
     id: number
     isTarget: boolean
@@ -109,6 +114,8 @@
   const reset = () => {
     initializeGame()
   }
+
+  const passwordStore = usePasswordStore()
   
   onMounted(() => {
     initializeGame()

@@ -36,19 +36,24 @@
           </transition>
         </div>
         
-        <button
-          @click="reset"
-          class="px-6 py-2 bg-[#F2F2F2]/10 text-[#F2F2F2] font-bold text-lg rounded-2xl hover:bg-[#F2F2F2]/20 active:bg-[#F2F2F2]/5 transition-all duration-300 shadow-lg shadow-black/50 hover:shadow-xl hover:shadow-black/70 border border-[#333]/50 focus:outline-none focus:ring-2 focus:ring-[#A8A8A8]/50"
-        >
-          {{ winner === null ? 'Новая игра' : 'Играть снова' }}
-        </button>
+        <div class="flex items-center gap-2">
+          <button
+            @click="reset"
+            class="px-6 py-2 bg-[#F2F2F2]/10 text-[#F2F2F2] font-bold text-lg rounded-2xl hover:bg-[#F2F2F2]/20 active:bg-[#F2F2F2]/5 transition-all duration-300 shadow-lg shadow-black/50 hover:shadow-xl hover:shadow-black/70 border border-[#333]/50 focus:outline-none focus:ring-2 focus:ring-[#A8A8A8]/50"
+          >
+            {{ winner === null ? 'Новая игра' : 'Играть снова' }}
+          </button>
+          <button @click="passwordStore.password = ''"
+            class="px-6 py-2 bg-[#F2F2F2]/10 text-[#F2F2F2] font-bold text-lg rounded-2xl hover:bg-[#F2F2F2]/20 active:bg-[#F2F2F2]/5 transition-all duration-300 shadow-lg shadow-black/50 hover:shadow-xl hover:shadow-black/70 border border-[#333]/50 focus:outline-none focus:ring-2 focus:ring-[#A8A8A8]/50"
+          >
+            В меню
+          </button>
+        </div>
       </div>
     </div>
   </template>
   
-  <script setup lang="ts">
-  import { ref, nextTick, computed } from 'vue'
-  
+  <script setup lang="ts">  
   const board = ref<(string | null)[]>(Array(9).fill(null))
   const currentPlayer = ref<'X' | 'O'>('X')
   const winner = ref<string | null>(null)
@@ -197,6 +202,8 @@
     currentPlayer.value = 'X'
     status.value = 'Ваш ход (X)'
   }
+
+  const passwordStore = usePasswordStore()
   </script>
   
   <style scoped>
