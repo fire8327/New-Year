@@ -5,9 +5,9 @@
             <FormKit v-model="passwordStore.password" type="password" outer-class="w-full" input-class="w-full px-4 py-1.5 rounded-xl text-sm font-medium bg-transparent border border-white/15 focus:border-white/50 focus:outline-none" placeholder="Пароль"/>
         </div>
     </div>
-    <TicTacToe v-if="passwordStore.password == 1"></TicTacToe>
-    <CardToe v-if="passwordStore.password == 2"></CardToe>
-    <RockPaperScissors v-if="passwordStore.password == 3"></RockPaperScissors>
+    <TicTacToe v-if="passwordStore.password == '7563'"></TicTacToe>
+    <CardToe v-if="passwordStore.password == '4547'"></CardToe>
+    <RockPaperScissors v-if="passwordStore.password == '0499'"></RockPaperScissors>
 </template>
 
 <script setup>

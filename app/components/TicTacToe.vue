@@ -184,7 +184,7 @@
   
   const updateStatusAndStreak = (w: string) => {
     if (w === 'X') {
-      status.value = 'Поздравляем! Вы выиграли!'
+      status.value = 'Локация: под телевизором в зале'
       lossStreak.value = 0
     } else if (w === 'O') {
       status.value = 'Компьютер выиграл!'

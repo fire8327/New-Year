@@ -103,7 +103,7 @@
     gameOver.value = true
   
     if (card.isTarget) {
-      status.value = 'Поздравляем! Вы угадали!'
+      status.value = 'Локация: вторая дверь справа в стенке'
       currentCount.value = 9 // Сброс до максимума после победы
     } else {
       status.value = 'Не угадали. В следующий раз будет легче...'

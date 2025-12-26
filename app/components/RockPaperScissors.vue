@@ -155,7 +155,7 @@
     if (playerWins.value >= 3 || cpuWins.value >= 3) {
       gameOver.value = true
       if (playerWins.value >= 3) {
-        status.value = 'Поздравляем! Вы выиграли матч!'
+        status.value = 'Локация: в зале под кроватью'
       } else {
         status.value = 'Компьютер выиграл матч. Попробуйте снова!'
       }
